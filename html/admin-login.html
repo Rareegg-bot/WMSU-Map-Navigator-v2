@@ -103,6 +103,11 @@
         .options-row label { color: var(--text-gray); font-size: 0.85rem; cursor: pointer; }
         .options-row input { accent-color: var(--crimson); }
 
+        button a {
+            text-decoration: none;
+            color: white;
+        }
+        
         /* Crimson Login Button */
         .btn-primary {
             width: 100%;
@@ -155,7 +160,7 @@
                     <p>Enter your credentials to access the dashboard</p>
                 </div>
                 
-                <form action="../html/admin-panel.html" method="post">
+                <form method="post">
                     <div class="input-box">
                         <label>Username or Email</label>
                         <div class="input-field">
@@ -180,7 +185,7 @@
                         <label for="remember">Remember me for 30 days</label>
                     </div>
 
-                    <button type="submit" class="btn-primary">Login as admin</button>
+                    <button type="submit" class="btn-primary"><a href="../html/admin-login.html">Login as admin</a></button>
                     
                     <div class="form-footer">
                         <p>Need an admin account? <a href="../html/admin-signup.html">Sign Up</a></p>
