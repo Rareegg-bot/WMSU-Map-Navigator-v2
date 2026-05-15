@@ -65,11 +65,18 @@
 
                     </div>
                 </form>
-                <button id="loginButton" class="btn-primary"><a href="../html/wmsu-map-navigator.html">Login</a></button>
+                    <button type="button" id="loginButton" class="btn-primary">Login</button>
 
                 <footer class="legal-footer">Copyright © 2026 Ian Lim.</footer>
             </div>
         </div>
     </div>
+
+
+<script>
+document.getElementById("loginButton").addEventListener("click", function() {
+    window.location.href = "../html/wmsu-map-navigator.html";
+});
+</script>
 </body>
 </html>
