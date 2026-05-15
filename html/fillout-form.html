@@ -31,7 +31,7 @@
                 <h2>Create <br>new account<span>.</span></h2>
                 <p class="back-link"><a href="../index.html">← Back To Landing Page</a></p>
                 
-                <form method="POST" id="registrationForm">
+                <form action="#" id="registrationForm">
                     <div class="input-box">
                         <input type="text" placeholder="First Name" required>
                         <i class="fas fa-user"></i>
@@ -97,7 +97,7 @@
                         </label>
                     </div>
 
-                    <button type="submit" class="btn-primary"><a href="../html/wmsu-map-navigator.html">Create Account</a></button>
+                    <button type="button" class="btn-primary" id="createAccountBtn">Create Account</button>
                     <p class="login-footer">Already a member? <a href="../index.html">Log In</a></p>
                 </form>
             </div>
@@ -172,21 +172,29 @@
         visitorRole.addEventListener('change', updateFields);
 
         // Domain Validation Logic
-        form.addEventListener('submit', (e) => {
+        const createAccountBtn = document.getElementById('createAccountBtn');
+
+        createAccountBtn.addEventListener('click', () => {
+        
             if (studentRole.checked) {
                 const email = emailField.value.toLowerCase();
+        
                 if (!email.endsWith('@wmsu.edu.ph')) {
-                    e.preventDefault();
                     alert("Error: Students must register with their official WMSU email address.");
                     emailField.style.borderColor = "var(--crimson)";
+                    return;
                 }
             }
-            
+        
             const securityCheck = document.getElementById('security-agree');
+        
             if (!securityCheck.checked) {
-                e.preventDefault();
                 alert("You must agree to the Campus Safety Protocol to continue.");
+                return;
             }
+        
+            // redirect after validation
+            window.location.href = "wmsu-map-navigator.html";
         });
 
         // Modal Logic
